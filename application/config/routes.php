@@ -14,3 +14,4 @@ $route['edit_wqstd'] = "PageController/edit_wqstd";
 $route['validateWaterData'] = "DBFunctionsController/validateWaterData";
 
 $route['test'] = "PageController/test";
+$route['regression'] = "Regression";
