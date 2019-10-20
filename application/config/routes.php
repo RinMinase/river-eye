@@ -15,4 +15,5 @@ $route['validateWaterData'] = "DBFunctionsController/validateWaterData";
 
 $route['test'] = "PageController/test";
 $route['test2'] = "PageController/test2";
+$route['test3'] = "PageController/test3";
 $route['regression'] = "Regression";

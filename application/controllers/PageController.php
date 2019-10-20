@@ -7,6 +7,7 @@ class PageController extends CI_Controller {
 	public function index() { $this->load->view('index'); }
 	public function input() { $this->load->view('input'); }
 	public function chart() { $this->load->view('chart'); }
+	public function test3() { $this->load->view('test3'); }
     
 	public function page_404() { $this->load->view('404'); }
 }
