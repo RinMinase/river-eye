@@ -31,6 +31,24 @@
 					<hr>
 					<?php echo form_open('validateWaterData') ?>
 						<div class="row">
+							<div class="col-md-12" id="div_errors">
+								<?php
+									// echo $rgx['date'];
+									// if(isset($rgx)) {
+									// 	if($rgx['date'] == 0) echo "Date is invalid<br>";
+									// 	if($rgx['time'] == 0) echo "Time is invalid<br>";
+									// 	if($rgx['bod'] == 0) echo "Biological Oxygen Demand is invalid<br>";
+									// 	if($rgx['do'] == 0) echo "Dissolved Oxygen is invalid<br>";
+									// 	if($rgx['tss'] == 0) echo "Total Suspended Solids is invalid<br>";
+									// 	if($rgx['ph'] == 0) echo "pH is invalid<br>";
+									// }
+									// else {
+									// 	echo 0;
+									// }
+									
+									// 	print_r($rgx);
+								?>
+							</div>
 							<div class="col-md-4">
 								<label for="river-location">River Location</label>
 								<select class="form-control" id="river-location" name="river-location">
@@ -69,7 +87,7 @@
                                     
                                     <option disabled="disabled"></option>
                                     <option disabled="disabled" style="font-weight:bold;">Guadalupe River</option>
-									<option value='Sudlon Bridge'>Sandayong Bridge</option>
+									<option value='Sandayong Bridge'>Sandayong Bridge</option>
 									<option value='Sanciangko Bridge'>Sanciangko Bridge</option>
 									<option value='Tupaz Bridge'>Tupaz Bridge</option>
 								</select>
@@ -385,7 +403,7 @@
 			}
 			
 			function validateMMDDYYYY(inputField) {
-				var isValid = /^((0[13578]|1[02])[\/.]31[\/.](19|20)[0-9]{2})|((01|0[3-9]|1[1-2])[\/.](29|30)[\/.](19|20)[0-9]{2})|((0[1-9]|1[0-2])[\/.](0[1-9]|1[0-9]|2[0-8])[\/.](19|20)[0-9]{2})|((02)[\/.]29[\/.](((19|20)(04|08|[2468][048]|[13579][26]))|2000))$/.test(inputField.value);
+				var isValid = /^((0[13578]|1[02])[\/.]31[\/.](19|20)[0-9]{2})$|^((01|0[3-9]|1[1-2])[\/.](29|30)[\/.](19|20)[0-9]{2})$|^((0[1-9]|1[0-2])[\/.](0[1-9]|1[0-9]|2[0-8])[\/.](19|20)[0-9]{2})$|^((02)[\/.]29[\/.](((19|20)(04|08|[2468][048]|[13579][26]))|2000))$/.test(inputField.value);
 				if (isValid) inputField.style.borderColor = '#4CAF50';
                 else inputField.style.borderColor = '#F44336'; 
 				return isValid;

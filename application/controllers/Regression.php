@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+/*
 class Regression extends CI_Controller {
 	public function __construct(){ parent::__construct(); getRegresion(); }
     
@@ -297,6 +297,6 @@ class Regression extends CI_Controller {
 //    for($j = 0; $j < count($reg_matrix_inverse[$i]); $j++) echo $reg_matrix_inverse[$i][$j] . ", ";
 //}
 
-
+*/
 
 ?>

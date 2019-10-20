@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class InputController extends CI_Controller {
+/*class InputController extends CI_Controller {
 	public function __construct(){ parent::__construct(); }
     
     public function validateEMBInput() {
@@ -22,3 +22,4 @@ class InputController extends CI_Controller {
 //        echo "shit";
 //        $this->DBModel->insertWaterData($river, $station, $barangay, $sDate, $sTime, $BOD, $DO, $TSS, $pH, $Temp);
     }
+    */

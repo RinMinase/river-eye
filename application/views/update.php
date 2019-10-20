@@ -27,114 +27,117 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h2>Input Data</h2>
+					<h2>Update Data</h2>
 					<hr>
-					<?php echo form_open('validateWaterData') ?>
+					<?php echo form_open('update_database') ?>
+						<input type='text' name='id' value="<?php echo $data[0]->id; ?>" style="display: none;">
 						<div class="row">
+							<div class="col-md-12" id="div_errors">
+							</div>
 							<div class="col-md-4">
 								<label for="river-location">River Location</label>
 								<select class="form-control" id="river-location" name="river-location">
-									<option value="Mahiga">Mahiga</option>
-									<option value="Butuanon">Butuanon</option>
-									<option value="Lahug">Lahug</option>
-									<option value="Kinalumsan">Kinalumsan</option>
-									<option value="Guadalupe">Guadalupe</option>
+									<option <?php if ($data[0]->river == 'Mahiga') echo 'selected'; ?> value="Mahiga">Mahiga</option>
+									<option <?php if ($data[0]->river == 'Butuanon') echo 'selected'; ?> value="Butuanon">Butuanon</option>
+									<option <?php if ($data[0]->river == 'Lahug') echo 'selected'; ?> value="Lahug">Lahug</option>
+									<option <?php if ($data[0]->river == 'Kinalumsan') echo 'selected'; ?> value="Kinalumsan">Kinalumsan</option>
+									<option <?php if ($data[0]->river == 'Guadalupe') echo 'selected'; ?> value="Guadalupe">Guadalupe</option>
 								</select>
 							</div>
 							<div class="col-md-4">
 								<label for="station-location">Bridge / Station Location</label>
 								<select class="form-control" id="station-location" name="station-location">
                                     <option disabled="disabled" style="font-weight:bold;">Mahiga River</option>
-									<option value='Gaisano, Bowlingplex Bridge'>Gaisano, Bowlingplex Bridge</option>
+									<option <?php if ($data[0]->station == 'Gaisano, Bowlingplex Bridge') echo 'selected'; ?> value='Gaisano, Bowlingplex Bridge'>Gaisano, Bowlingplex Bridge</option>
                                     
                                     <option disabled="disabled"></option>
                                     <option disabled="disabled" style="font-weight:bold;">Butuanon River</option>
-									<option value='Canduman Bridge'>Canduman Bridge</option>
-									<option value='Bacayan Bridge'>Bacayan Bridge</option>
-									<option value='Sta. Lucia Bridge'>Sta. Lucia Bridge</option>
-									<option value='Binaliw II Bridge'>Binaliw II Bridge</option>
-									<option value='Candarong Bridge'>Candarong Bridge</option>
+									<option <?php if ($data[0]->station == 'Canduman Bridge') echo 'selected'; ?> value='Canduman Bridge'>Canduman Bridge</option>
+									<option <?php if ($data[0]->station == 'Bacayan Bridge') echo 'selected'; ?> value='Bacayan Bridge'>Bacayan Bridge</option>
+									<option <?php if ($data[0]->station == 'Sta. Lucia Bridge') echo 'selected'; ?> value='Sta. Lucia Bridge'>Sta. Lucia Bridge</option>
+									<option <?php if ($data[0]->station == 'Binaliw II Bridge') echo 'selected'; ?> value='Binaliw II Bridge'>Binaliw II Bridge</option>
+									<option <?php if ($data[0]->station == 'Candarong Bridge') echo 'selected'; ?> value='Candarong Bridge'>Candarong Bridge</option>
                                     
                                     <option disabled="disabled"></option>
                                     <option disabled="disabled" style="font-weight:bold;">Lahug River</option>
-									<option value='Sudlon Bridge'>Sudlon Bridge</option>
-									<option value='Kamputhaw Bridge'>Kamputhaw Bridge</option>
-									<option value='Gen. Maxillom Bridge'>Gen. Maxillom Bridge</option>
-									<option value='Imus Bridge'>Imus Bridge</option>
+									<option <?php if ($data[0]->station == 'Sudlon Bridge') echo 'selected'; ?> value='Sudlon Bridge'>Sudlon Bridge</option>
+									<option <?php if ($data[0]->station == 'Kamputhaw Bridge') echo 'selected'; ?> value='Kamputhaw Bridge'>Kamputhaw Bridge</option>
+									<option <?php if ($data[0]->station == 'Gen. Maxillom Bridge') echo 'selected'; ?> value='Gen. Maxillom Bridge'>Gen. Maxillom Bridge</option>
+									<option <?php if ($data[0]->station == 'Imus Bridge') echo 'selected'; ?> value='Imus Bridge'>Imus Bridge</option>
                                     
                                     <option disabled="disabled"></option>
                                     <option disabled="disabled" style="font-weight:bold;">Kinalumsan River</option>
-									<option value='F. Llama Bridge'>F. Llama Bridge</option>
-									<option value='Kinalumsan Bridge 1'>Kinalumsan Bridge 1</option>
+									<option <?php if ($data[0]->station == 'F. Llama Bridge') echo 'selected'; ?> value='F. Llama Bridge'>F. Llama Bridge</option>
+									<option <?php if ($data[0]->station == 'Kinalumsan Bridge 1') echo 'selected'; ?> value='Kinalumsan Bridge 1'>Kinalumsan Bridge 1</option>
                                     
                                     <option disabled="disabled"></option>
                                     <option disabled="disabled" style="font-weight:bold;">Guadalupe River</option>
-									<option value='Sudlon Bridge'>Sandayong Bridge</option>
-									<option value='Sanciangko Bridge'>Sanciangko Bridge</option>
-									<option value='Tupaz Bridge'>Tupaz Bridge</option>
+									<option <?php if ($data[0]->station == 'Sandayong Bridge') echo 'selected'; ?> value='Sandayong Bridge'>Sandayong Bridge</option>
+									<option <?php if ($data[0]->station == 'Sanciangko Bridge') echo 'selected'; ?> value='Sanciangko Bridge'>Sanciangko Bridge</option>
+									<option <?php if ($data[0]->station == 'Tupaz Bridge') echo 'selected'; ?> value='Tupaz Bridge'>Tupaz Bridge</option>
 								</select>
 							</div>
 							<div class="col-md-4">
 								<label for="barangay-location">Barangay Name</label>
                                 <select class="form-control" id="barangay-location" name="barangay-location">
                                     <option disabled="disabled" style="font-weight:bold;">Mahiga River</option>
-									<option value='Banilad'>Banilad</option>
+									<option <?php if ($data[0]->barangay == 'Tupaz Bridge') echo 'selected'; ?> value='Banilad'>Banilad</option>
                                     
                                     <option disabled="disabled"></option>
                                     <option disabled="disabled" style="font-weight:bold;">Butuanon River</option>
-									<option value='Talamban'>Talamban</option>
-									<option value='Bacayan'>Bacayan</option>
-									<option value='Pulangbato'>Pulangbato</option>
+									<option <?php if ($data[0]->barangay == 'Talamban') echo 'selected'; ?> value='Talamban'>Talamban</option>
+									<option <?php if ($data[0]->barangay == 'Bacayan') echo 'selected'; ?> value='Bacayan'>Bacayan</option>
+									<option <?php if ($data[0]->barangay == 'Pulangbato') echo 'selected'; ?> value='Pulangbato'>Pulangbato</option>
                                     
                                     <option disabled="disabled"></option>
                                     <option disabled="disabled" style="font-weight:bold;">Lahug River</option>
-									<option value='Lahug'>Lahug</option>
-									<option value='Kamputhaw'>Kamputhaw</option>
-									<option value='Lorega San Miguel'>Lorega San Miguel</option>
+									<option <?php if ($data[0]->barangay == 'Lahug') echo 'selected'; ?> value='Lahug'>Lahug</option>
+									<option <?php if ($data[0]->barangay == 'Kamputhaw') echo 'selected'; ?> value='Kamputhaw'>Kamputhaw</option>
+									<option <?php if ($data[0]->barangay == 'Lorega San Miguel') echo 'selected'; ?> value='Lorega San Miguel'>Lorega San Miguel</option>
                                     
                                     <option disabled="disabled"></option>
                                     <option disabled="disabled" style="font-weight:bold;">Kinalumsan River</option>
-									<option value='Tisa'>Tisa</option>
-									<option value='Labangon'>Labangon</option>
+									<option <?php if ($data[0]->barangay == 'Tisa') echo 'selected'; ?> value='Tisa'>Tisa</option>
+									<option <?php if ($data[0]->barangay == 'Labangon') echo 'selected'; ?> value='Labangon'>Labangon</option>
                                     
                                     <option disabled="disabled"></option>
                                     <option disabled="disabled" style="font-weight:bold;">Guadalupe River</option>
-									<option value='Guadalupe'>Guadalupe</option>
-									<option value='Pahina Central'>Pahina Central</option>
+									<option <?php if ($data[0]->barangay == 'Guadalupe') echo 'selected'; ?> value='Guadalupe'>Guadalupe</option>
+									<option <?php if ($data[0]->barangay == 'Pahina Central') echo 'selected'; ?> value='Pahina Central'>Pahina Central</option>
 								</select>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-4">
 								<label for="sampling-date">Sampling Date (MM/DD/YYYY)</label>
-								<input class="form-control" type="text" name="sampling-date" id="sampling-date" oninput="validateEverything();">
+								<input class="form-control" type="text" name="sampling-date" id="sampling-date" value="<?php echo date('m/d/Y', strtotime($data[0]->collection_datetime)); ?>" oninput="validateEverything();">
 							</div>
 							<div class="col-md-4">
 								<label for="collection-time">Collection Time (HH:MM) [24 Hour Format]</label>
-								<input class="form-control" type="text" name="collection-time" id="collection-time" oninput="validateEverything();">
+								<input class="form-control" type="text" name="collection-time" id="collection-time" value="<?php echo date('H:i', strtotime($data[0]->collection_datetime)); ?>" oninput="validateEverything();">
 							</div>
 						</div>
 					
 						<div class="row">
 							<div class="col-md-4">
 								<label for="bod">Biological Oxygen Demand (BOD)</label>
-								<input class="form-control" type="text" name="bod" id="bod" oninput="validateEverything();">
+								<input class="form-control" type="text" name="bod" id="bod" value="<?php echo $data[0]->BOD; ?>" oninput="validateEverything();">
 							</div>
 							<div class="col-md-4">
 								<label for="do">Dissolved Oxygen (DO)</label>
-								<input class="form-control" type="text" name="do" id="do" oninput="validateEverything();">
+								<input class="form-control" type="text" name="do" id="do" value="<?php echo $data[0]->DO; ?>" oninput="validateEverything();">
 							</div>
 							<div class="col-md-4">
 								<label for="tss">Total Suspended Solids (TSS)</label>
-								<input class="form-control" type="text" name="tss" id="tss" oninput="validateEverything();">
+								<input class="form-control" type="text" name="tss" id="tss" value="<?php echo $data[0]->TSS; ?>" oninput="validateEverything();">
 							</div>
 							<div class="col-md-4">
 								<label for="ph">pH Level</label>
-								<input class="form-control" type="text" name="ph" id="ph" oninput="validateEverything();">
+								<input class="form-control" type="text" name="ph" id="ph" value="<?php echo $data[0]->pH; ?>" oninput="validateEverything();">
 							</div>
 							<div class="col-md-4">
 								<label for="temp">Temperature (&deg;C)</label>
-								<input class="form-control" type="text" name="temp" id="temp" oninput="validateEverything();">
+								<input class="form-control" type="text" name="temp" id="temp" value="<?php echo $data[0]->TMP; ?>" oninput="validateEverything();">
 							</div>
 						</div>
                         
@@ -154,7 +157,7 @@
                         
 						<div class="row" style="margin-bottom: 20px; margin-top: 20px;">
 							<div class="col-md-12">
-								<button class="btn btn-large" id="submit_button" disabled>Submit</button>
+								<button class="btn btn-large" id="submit_button" disabled>Update</button>
 							</div>
 						</div>
 					<?php echo form_close() ?>
@@ -385,7 +388,7 @@
 			}
 			
 			function validateMMDDYYYY(inputField) {
-				var isValid = /^((0[13578]|1[02])[\/.]31[\/.](19|20)[0-9]{2})|((01|0[3-9]|1[1-2])[\/.](29|30)[\/.](19|20)[0-9]{2})|((0[1-9]|1[0-2])[\/.](0[1-9]|1[0-9]|2[0-8])[\/.](19|20)[0-9]{2})|((02)[\/.]29[\/.](((19|20)(04|08|[2468][048]|[13579][26]))|2000))$/.test(inputField.value);
+				var isValid = /^((0[13578]|1[02])[\/.]31[\/.](19|20)[0-9]{2})$|^((01|0[3-9]|1[1-2])[\/.](29|30)[\/.](19|20)[0-9]{2})$|^((0[1-9]|1[0-2])[\/.](0[1-9]|1[0-9]|2[0-8])[\/.](19|20)[0-9]{2})$|^((02)[\/.]29[\/.](((19|20)(04|08|[2468][048]|[13579][26]))|2000))$/.test(inputField.value);
 				if (isValid) inputField.style.borderColor = '#4CAF50';
                 else inputField.style.borderColor = '#F44336'; 
 				return isValid;

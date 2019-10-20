@@ -1,20 +1,35 @@
 <?php
-/*
-$date = new DateTime();
-echo date("Y m d", $date->getTimestamp()) . "<br>";
 
-echo strtotime("10 September 2000") . "<br>";
+// function query_time_server () {
+// echo "<br>XX" . date('Y-m-d H:i:s', time());
 
-echo date("Y m d", "10 September 2000");
+// 	date_default_timezone_set("Asia/Manila"); //ntp.pads.ufrj.br
+// 	if($fs = @fsockopen("24.56.178.140", 37, $err, $err_str, 5)) {
+// 		$timevalue = fread($fs, 49);
+// 		fclose($fs);
 
-*/
+// 		$timevalue = bin2hex($timevalue);
+// 		$timevalue = (abs(HexDec('7fffffff') - HexDec($timevalue) - HexDec('7fffffff')));
+// 		$timevalue = $timevalue - 2208988800; # convert to UNIX time stamp
+
+// 		$timevalue = date('Y-m-d H:i:s', $timevalue);
+// 	} else { $timevalue = "-1"; }
+// 	return($timevalue);
+// }
+
+// echo query_time_server();
+
+// echo "<br>" . date('Y-m-d H:i:s', time());
 
 
-//echo "amp;"
+// echo getHostByName(getHostName());
+// $value = $this->input->get('submit_delete');
+// if (!isset($value)) {
+// 	echo 'beeeeeetch';
+// } else {
+// 	echo $value;
+// }
+
+echo date('m/d/y', '2021-03-31 17:00:00');
 
 ?>
-
-
-<html>
-	&
-	&4CFA;

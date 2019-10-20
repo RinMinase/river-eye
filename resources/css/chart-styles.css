@@ -34,7 +34,7 @@ body {
 }
 
 .tabs-left > .nav-tabs > li > a {
-    min-width: 74px;
+    width: 110px;
     margin-right: 0;
     margin-bottom: 3px;
 }
