@@ -30,187 +30,13 @@
 		<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> -->
 
 		<!-- <link rel="stylesheet" href="./bootstrap-2.3.2/bootstrap.min.css"> -->
+        
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>resources/css/chart-styles.css">
+        
+		<style type="text/css"></style>
 
 		<title>Chart</title>
 
-		<style type="text/css">
-
-			body {
-				background-color: #0e223d;
-				color: #000;
-			}
-
-			.nav.nav-tabs.top-tabs > li > a {
-				border-radius: 8px 8px 0 0;
-				padding: 8px 8px;
-				color: black;
-			}
-
-			.nav.nav-tabs.top-tabs > li:not(.active) > a {
-				background-color: #e0e0e0;
-			}
-
-			.nav.nav-tabs.top-tabs > li.active > a {
-				background-color: #ffffff;
-			}
-
-			.tabs-left > .nav-tabs {
-				border-bottom: 0;
-			}
-
-			.tab-content > .tab-pane {
-				display: none;
-			}
-
-			.tab-content > .active {
-				display: block;
-			}
-
-			.tabs-left > .nav-tabs > li {
-				float: none;
-			}
-
-			.tabs-left > .nav-tabs > li > a {
-				min-width: 74px;
-				margin-right: 0;
-				margin-bottom: 3px;
-			}
-
-			.tabs-left > .nav-tabs {
-				float: left;
-				margin-right: 0px;
-				margin-top: 37px;
-				border-right: 1px solid #ddd;
-			}
-
-			.tabs-left > .nav-tabs > li > a {
-				margin-right: -1px;
-				border-radius: 8px 0 0 8px;
-			}
-
-			.tabs-left > .nav-tabs > li > a:hover,
-			.tabs-left > .nav-tabs > li > a:focus {
-				border-color: #eeeeee #dddddd #eeeeee #eeeeee;
-			}
-
-			.tabs-left > .nav-tabs .active > a,
-			.tabs-left > .nav-tabs .active > a:hover,
-			.tabs-left > .nav-tabs .active > a:focus {
-				border-color: #ddd transparent #ddd #ddd;
-				*border-right-color: #ffffff;
-			}
-
-			.tab-pane > p {
-				margin: 5px 15px;
-			}
-
-			li > a.guadalupe {
-				background-color: #B3E5FC;
-			}
-
-			li.active > a.guadalupe,
-			li.active > a.guadalupe:focus,
-			li.active > a.guadalupe:hover {
-				background-color: #E1F5FE;
-			}
-
-			li > a.butuanon {
-				background-color: #EF9A9A;
-			}
-
-			li.active > a.butuanon,
-			li.active > a.butuanon:focus,
-			li.active > a.butuanon:hover {
-				background-color: #FFCDD2;
-			}
-
-			li > a.mahiga {
-				background-color: #A5D6A7;
-			}
-
-			li.active > a.mahiga,
-			li.active > a.mahiga:focus,
-			li.active > a.mahiga:hover {
-				background-color: #C8E6C9;
-			}
-
-			li > a.lahug {
-				background-color: #E1BEE7;
-			}
-
-			li.active > a.lahug,
-			li.active > a.lahug:focus,
-			li.active > a.lahug:hover {
-				background-color: #F3E5F5;
-			}
-
-			li > a.kinalumsan {
-				background-color: #F8BBD0;
-			}
-
-			li.active > a.kinalumsan,
-			li.active > a.kinalumsan:focus,
-			li.active > a.kinalumsan:hover {
-				background-color: #FCE4EC;
-			}
-
-			ul.nav > li p {
-				margin-bottom: 0px;
-				color: #555555
-			}
-
-			ul.nav > li p.station-name {
-				font-size: smaller;
-				font-style: italic;
-				margin-left: 8px;
-			}
-
-			ul.nav > li.active p.city-name {
-				font-weight: bold;
-			}
-
-			.indicator {
-				display: inline-block;
-				width: 42px;
-				height: 12px;
-				border: 1px solid #dddddd;
-			}
-
-			.indicator-text {
-				display: inline-block;
-				font-size: small;
-				color: #eeeeee;
-			}
-
-			.indicator.guadalupe {
-				background-color: #B3E5FC;
-			}
-
-			.indicator.butuanon {
-				background-color: #EF9A9A;
-			}
-
-			.indicator.mahiga {
-				background-color: #A5D6A7;
-			}
-
-			.indicator.lahug {
-				background-color: #E1BEE7;
-			}
-
-			.indicator.kinalumsan {
-				background-color: #F8BBD0;
-			}
-
-			h3 {
-				color: #555555;
-			}
-
-			table th,
-			table td {
-				color: #777777
-			}
-		</style>
 	</head>
 	<body>
 		<div class="container">
@@ -257,376 +83,163 @@
                                 $lahug_cnt = 1;
                                 $kinalumsan_cnt = 1;
               
-              
                                 foreach ($info_query->result() as $row) {
                                     echo "<li";
-                                    if ($i == 0) {
+                                    if ($i++ == 0) {
                                         switch ($row->river_name) {
-                                            case 'Guadalupe River': echo " class='active'"; break;
-                                            case 'Butuanon River': echo " class='active'"; break;
-                                            case 'Mahiga River': echo " class='active'"; break;
-                                            case 'Lahug River': echo " class='active'"; break;
-                                            case 'Kinalumsan River': echo " class='active'"; break;
+                                            case 'Guadalupe River': echo " class=\"active\""; break;
+                                            case 'Butuanon River': echo " class=\"active\""; break;
+                                            case 'Mahiga River': echo " class=\"active\""; break;
+                                            case 'Lahug River': echo " class=\"active\""; break;
+                                            case 'Kinalumsan River': echo " class=\"active\""; break;
                                         }
-                                        $i++;
                                     }
                                     switch ($row->river_name) {
-                                        case 'Guadalupe River': echo "><a class='guadalupe' href='#guadalupe" . $guadalupe_cnt++; break;
-                                        case 'Butuanon River': echo "><a class='butuanon' href='#butuanon" . $butuanon_cnt++; break;
-                                        case 'Mahiga River': echo "><a class='mahiga' href='#mahiga" . $mahiga_cnt++; break;
-                                        case 'Lahug River': echo "><a class='lahug' href='#lahug" . $lahug_cnt++; break;
-                                        case 'Kinalumsan River': echo "><a class='kinalumsan' href='#kinalumsan" . $kinalumsan_cnt++; break;
+                                        case 'Guadalupe River': echo "><a class=\"guadalupe\" href=\"#guadalupe" . $guadalupe_cnt++; break;
+                                        case 'Butuanon River': echo "><a class=\"butuanon\" href=\"#butuanon" . $butuanon_cnt++; break;
+                                        case 'Mahiga River': echo "><a class=\"mahiga\" href=\"#mahiga" . $mahiga_cnt++; break;
+                                        case 'Lahug River': echo "><a class=\"lahug\" href=\"#lahug" . $lahug_cnt++; break;
+                                        case 'Kinalumsan River': echo "><a class=\"kinalumsan\" href=\"#kinalumsan" . $kinalumsan_cnt++; break;
                                     }
-                                    echo  "'><p class='city-name'>" . $row->barangay_name . "</p><p class='station-name'>" . $row->station_name . "</p></a></li>";
+                                    echo  "\"><p class=\"city-name\">" . $row->barangay_name . "</p><p class=\"station-name\">" . $row->station_name . "</p></a></li>";
                                 }
                             ?>
 						</ul>
 						<div class="tab-content">
-							<div class="tab-pane fade active in" id="guadalupe1">
-								<div class="tabbable">
-									<ul class="nav nav-tabs top-tabs" style="margin-bottom: 0px;" id="guadalupe_years">
-										<li class="active">
-											<a href="#guadalupe_2014">(s) 2014</a>
-										</li>
-										<li>
-											<a href="#guadalupe_2012">(s) 2012</a>
-										</li>
-										
-                                        <?php
-                                            $header_query = $this->db->query("SELECT collection_datetime FROM river_data WHERE station='Sandayong Bridge'");
-              
-                                            $years = [];
-                                            foreach ($header_query->result() as $row) {
-                                                array_push($years, date("Y", strtotime($row->collection_datetime)));
+                            
+                            
+                            
+                            
+                            <!--  BULLSHIT CODE!!! -->
+                            
+                            <?php
+                            
+                                $i = 0;
+                                $guadalupe_cnt = 1;
+                                $butuanon_cnt = 1;
+                                $mahiga_cnt = 1;
+                                $lahug_cnt = 1;
+                                $kinalumsan_cnt = 1;
+                            
+                                foreach ($info_query->result() as $row) {
+                                    echo "<div class=\"tab-pane fade ";
+                                    
+                                    if ($i++ == 0) echo "active ";
+
+                                    echo "in id=\"";
+                                    switch ($row->river_name) {
+                                        case "Guadalupe River": echo "guadalupe" . $guadalupe_cnt++; break;
+                                        case "Butuanon River": echo "butuanon" . $butuanon_cnt++; break;
+                                        case "Mahiga River": echo "mahiga" . $mahiga_cnt++; break;
+                                        case "Lahug River": echo "lahug" . $lahug_cnt++; break;
+                                        case "Kinalumsan River": echo "kinalumsan" . $kinalumsan_cnt++; break;
+                                    }
+
+                                    echo "\">";
+                                        echo "<div class=\"tabbable\">";
+                                        echo "<ul class=\"nav nav-tabs top-tabs\" style=\"margin-bottom: 0px;\" id=\"";
+                                        switch ($row->river_name) {
+                                            case "Guadalupe River": echo "guadalupe"; break;
+                                            case "Butuanon River": echo "butuanon"; break;
+                                            case "Mahiga River": echo "mahiga"; break;
+                                            case "Lahug River": echo "lahug"; break;
+                                            case "Kinalumsan River": echo "kinalumsan"; break;
+                                        }
+                                        echo "_years\">";
+
+                                        $header_query = $this->db->query("SELECT collection_datetime FROM river_data WHERE station=\"" . $row->station_name . "\"");
+
+                                        $years = [];
+                                        foreach ($header_query->result() as $header_query_row) {
+                                            array_push($years, date("Y", strtotime($header_query_row->collection_datetime)));
+                                        }
+
+                                        $years = array_unique($years);
+                                        usort($years, "neg_cmp");
+
+                                        $i = 0;
+                                        $tempStationName = explode(" ", strtolower(trim($row->station_name)));
+                                        foreach ($years as $x) {
+                                            echo "<li";
+                                            if ($i++ == 0) echo " class=\"active\"";
+                                            echo "><a href=\"#";
+                                            switch ($row->river_name) {
+                                                case "Guadalupe River": echo "guadalupe"; break;
+                                                case "Butuanon River": echo "butuanon"; break;
+                                                case "Mahiga River": echo "mahiga"; break;
+                                                case "Lahug River": echo "lahug"; break;
+                                                case "Kinalumsan River": echo "kinalumsan"; break;
                                             }
-                                            
-                                            $years = array_unique($years);
-                                            usort($years, "neg_cmp");
-                                            
-//                                            $i = 0;
-                                            foreach ($years as $x) {
-//                                                if ($i == 0) {
-//                                                    echo "<li class='active'><a href='#guadalupe_sandayong_". $x . "'>" . $x . "</a></li>";
-//                                                } else {
-                                                    echo "<li><a href='#guadalupe_sandayong_". $x . "'>" . $x . "</a></li>";
-//                                                }
-//                                                $i++;
-                                            }
-    
-                                        ?>
-										
-										<li class="dropdown" style="float: right;" id="guadalupe_more_parent">
-											<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="margin-right: 0px;">More&nbsp;&nbsp;<!-- <i class="fa fa-chevron-down" aria-hidden="true"></i> --><span class="caret"></span></a>
-											<ul class="dropdown-menu" role="menu" id="guadalupe_more"></ul>
-										</li> 
 
-										
-									</ul>
-                                    
-                                    
-                                    
-                                    
-                                    
-									<div class="tab-content" style="padding-top: 10px; background-color: #ffffff;">
-                                        
-                                        
-										<div class="tab-pane fade active in" id="guadalupe_2014">
-											<div class="span10" style="color: #555555; margin-bottom: 25px;">
-												<h3 style="margin: 0px;">Guadalupe River (Year 2014)</h3>
-												<h4 style="margin: 0px;">Barangay Guadalupe</h4>
-												<h5 style="margin: 0px;">Sandayong Bridge</h5>
-											</div>
+                                            echo "_" . $tempStationName[0] . "_". $x . "\">" . $x . "</a></li>";
 
-											<div class="span10">
-                                                <canvas id="chart-bod" style="display: none;"></canvas>
+                                        }
 
-												<?php
-													$query = $this->db->query("SELECT * FROM river_data WHERE station='Sandayong Bridge'");
-												?>
+                                        echo "<li class=\"dropdown\" style=\"float: right;\"><a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" style=\"margin-right: 0px;\">More&nbsp;&nbsp;<span class=\"caret\"></span></a><ul class=\"dropdown-menu\" role=\"menu\" id=\"guadalupe_more\"></ul></li></ul>";
+                                            echo "<div class=\"tab-content\" style=\"padding-top: 10px; background-color: #ffffff;\">";
+//                                          $i = 0;
+//                                          foreach ($years as $x) {
+//
+                                                echo "<div class=\"tab-pane fade ";
+                                                if ($i++ == 0) echo "active "; 
+                                                echo "in\" id=\"guadalupe_sandayong_" . $x . "\">";
+                                                    echo "<div class=\"span10\" style=\"color: #555555; margin-bottom: 25px;\">";
+                                                    echo "<h3 style=\"margin: 0px;\">Guadalupe River (Year " . $x . ")</h3>";
+                                                    echo "<h4 style=\"margin: 0px;\">Barangay Guadalupe</h4>";
+                                                    echo "<h5 style=\"margin: 0px;\">Sandayong Bridge</h5></div>";
 
-												<h3>Biological Oxygen Demand (BOD)</h3>
+                                                    $query = $this->db->query("SELECT * FROM river_data WHERE station='Sandayong Bridge' AND YEAR(collection_datetime)='" . $x . "'");
 
-												<div class="span4" style="margin-left: 0px;">
-													<table class="table table-bordered">
-														<thead>
-															<tr>
-																<th colspan="2" style="text-align: center;">Initial Points / Values</th>
-															</tr>
-															<tr>
-																<th>Date</th>
-																<th>Value</th>
-															</tr>
-														</thead>
-														<tbody>
-															<?php
-																foreach ($query->result() as $row) {
-																	echo "<tr><td>".date("F d Y", strtotime($row->collection_datetime))."</td>";
-																	echo "<td>".$row->BOD."</td></tr>";
-																}
-															?>
-														</tbody>
-													</table>
-												</div>
-
-<!--
-												<div class="span4">
-													<table class="table table-bordered">
-														<thead>
-															<tr>
-																<th colspan="2" style="text-align: center; color: orange;">Regression Points / Values</th>
-															</tr>
-															<tr>
-																<th>Date</th>
-																<th>Value</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td>August 2014</td>
-																<td>4.0</td>
-															</tr>
-															<tr>
-																<td>September 2014</td>
-																<td>4.1</td>
-															</tr>
-															<tr>
-																<td>October 2014</td>
-																<td>4.6</td>
-															</tr>
-															<tr>
-																<td>November 2014</td>
-																<td>4.2</td>
-															</tr>
-															<tr>
-																<td>December 2014</td>
-																<td>4.5</td>
-															</tr>
-															<tr>
-																<td>January 2015</td>
-																<td>4.9</td>
-															</tr>
-															<tr>
-																<td>February 2015</td>
-																<td>4.3</td>
-															</tr>
-														</tbody>
-													</table>
-												</div>
--->
-											</div>
-
-											<div class="span10">
-												<!-- <canvas id="chart-bod"></canvas> -->
-
-												<h3>Dissolved Oxygen (DO)</h3>
-
-												<div class="span4" style="margin-left: 0px;">
-													<table class="table table-bordered">
-														<thead>
-															<tr>
-																<th colspan="2" style="text-align: center;">Initial Points / Values</th>
-															</tr>
-															<tr>
-																<th>Date</th>
-																<th>Value</th>
-															</tr>
-														</thead>
-														<tbody>
-															<?php
-																foreach ($query->result() as $row) {
-																	echo "<tr><td>".date("F d", strtotime($row->collection_datetime))."</td>";
-																	echo "<td>".$row->DO."</td></tr>";
-																}
-															?>
-
-															
-														</tbody>
-													</table>
-												</div>
-											</div>
-
-											<div class="span10">
-												<!-- <canvas id="chart-bod"></canvas> -->
-
-												<h3>Total Suspended Solids (TSS)</h3>
-
-												<div class="span4" style="margin-left: 0px;">
-													<table class="table table-bordered">
-														<thead>
-															<tr>
-																<th colspan="2" style="text-align: center;">Initial Points / Values</th>
-															</tr>
-															<tr>
-																<th>Date</th>
-																<th>Value</th>
-															</tr>
-														</thead>
-														<tbody>
-															<?php
-																foreach ($query->result() as $row) {
-																	echo "<tr><td>".date("F d", strtotime($row->collection_datetime))."</td>";
-																	echo "<td>".$row->TSS."</td></tr>";
-																}
-															?>
-														</tbody>
-													</table>
-												</div>
-											</div>
-
-											<div class="span10">
-												<!-- <canvas id="chart-bod"></canvas> -->
-
-												<h3>pH Level</h3>
-
-												<div class="span4" style="margin-left: 0px;">
-													<table class="table table-bordered">
-														<thead>
-															<tr>
-																<th colspan="2" style="text-align: center;">Initial Points / Values</th>
-															</tr>
-															<tr>
-																<th>Date</th>
-																<th>Value</th>
-															</tr>
-														</thead>
-														<tbody>
-															<?php
-																foreach ($query->result() as $row) {
-																	echo "<tr><td>".date("F d", strtotime($row->collection_datetime))."</td>";
-																	echo "<td>".$row->pH."</td></tr>";
-																}
-															?>
-														</tbody>
-													</table>
-												</div>
-											</div>
-
-											<div class="span10">
-												<!-- <canvas id="chart-bod"></canvas> -->
-
-												<h3>Temperature (&deg;C)</h3>
-
-												<div class="span4" style="margin-left: 0px;">
-													<table class="table table-bordered">
-														<thead>
-															<tr>
-																<th colspan="2" style="text-align: center;">Initial Points / Values</th>
-															</tr>
-															<tr>
-																<th>Date</th>
-																<th>Value</th>
-															</tr>
-														</thead>
-														<tbody>
-															<?php
-																foreach ($query->result() as $row) {
-																	echo "<tr><td>".date("F d", strtotime($row->collection_datetime))."</td>";
-																	echo "<td>".$row->TMP."</td></tr>";
-																}
-															?>
-														</tbody>
-													</table>
-												</div>
-											</div>
-										</div>
-                                        
-                                        
-                                        <?php
-                                            foreach ($years as $x) {
-                                                echo "<div class='tab-pane fade active in' id='guadalupe_sandayong_" . $x . "'>";
-                                                echo "<div class='span10' style='color: #555555; margin-bottom: 25px;'>";
-                                                echo "<h3 style='margin: 0px;'>Guadalupe River (Year " . $x . ")</h3>";
-                                                echo "<h4 style='margin: 0px;'>Barangay Guadalupe</h4>";
-                                                echo "<h5 style='margin: 0px;'>Sandayong Bridge</h5></div>";
-                                                
-												$query = $this->db->query("SELECT * FROM river_data WHERE station='Sandayong Bridge' AND YEAR(collection_datetime)='" . $x . "'");
-												
-                                                for($temp = 0; $temp < 5; $temp++) {
-                                                    echo "<div class='span10'><canvas id='chart_";
+                                                    for($temp = 0; $temp < 5; $temp++) {
                                                     
-                                                    switch($temp) {
-                                                        case 0: echo "bod"; break;
-                                                        case 1: echo "do"; break;
-                                                        case 2: echo "tss"; break;
-                                                        case 3: echo "ph"; break;
-                                                        case 4: echo "temp"; break; 
-                                                    }
-                                                    
-                                                    echo "_sandayong_" . $x . "' style='display: none;'></canvas><h3>";
-                                                    
-                                                    switch($temp) {
-                                                        case 0: echo "Biological Oxygen Demand (BOD)"; break;
-                                                        case 1: echo "Dissolved Oxygen (DO)"; break;
-                                                        case 2: echo "Total Suspended Solids (TSS)"; break;
-                                                        case 3: echo "pH Level (pH)"; break;
-                                                        case 4: echo "Temperature (&deg;C)"; break; 
-                                                    }
-                                                    
-                                                    echo "</h3><div class='span4' style='margin-left: 0px;'>";
-                                                    echo "<table class='table table-bordered'>";
-                                                    echo "<thead><tr><th colspan='2' style='text-align: center;'>Initial Points / Values</th></tr><tr><th>Date</th><th>Value</th></tr></thead><tbody>";
+                                                        echo "<div class=\"span10\"><canvas id=\"chart_";
 
-                                                    foreach ($query->result() as $row) {
-                                                        echo "<tr><td>".date("F d", strtotime($row->collection_datetime))."</td><td>";
-                                                        
                                                         switch($temp) {
-                                                            case 0: echo $row->BOD; break;
-                                                            case 1: echo $row->DO; break;
-                                                            case 2: echo $row->TSS; break;
-                                                            case 3: echo $row->pH; break;
-                                                            case 4: echo $row->TMP; break; 
+                                                            case 0: echo "bod"; break;
+                                                            case 1: echo "do"; break;
+                                                            case 2: echo "tss"; break;
+                                                            case 3: echo "ph"; break;
+                                                            case 4: echo "temp"; break; 
                                                         }
-                                                        echo "</td></tr>";
-                                                    }
-                                                    echo "</tbody></table></div></div>";
-                                                    
-//                                                    <div class="span4">
-//													<table class="table table-bordered">
-//														<thead>
-//															<tr>
-//																<th colspan="2" style="text-align: center; color: orange;">Regression Points / Values</th>
-//															</tr>
-//															<tr>
-//																<th>Date</th>
-//																<th>Value</th>
-//															</tr>
-//														</thead>
-//														<tbody>
-//															<tr>
-//																<td>August 2014</td>
-//																<td>4.0</td>
-//															</tr>
-//															<tr>
-//																<td>September 2014</td>
-//																<td>4.1</td>
-//															</tr>
-//															<tr>
-//																<td>October 2014</td>
-//																<td>4.6</td>
-//															</tr>
-//															<tr>
-//																<td>November 2014</td>
-//																<td>4.2</td>
-//															</tr>
-//															<tr>
-//																<td>December 2014</td>
-//																<td>4.5</td>
-//															</tr>
-//															<tr>
-//																<td>January 2015</td>
-//																<td>4.9</td>
-//															</tr>
-//															<tr>
-//																<td>February 2015</td>
-//																<td>4.3</td>
-//															</tr>
-//														</tbody>
-//													</table>
-//												</div>
-                                                }
-                                            }
 
-                                        ?>
+                                                        echo "_sandayong_" . $x . "\" style=\"display: none;\"></canvas><h3>";
+
+                                                        switch($temp) {
+                                                            case 0: echo "Biological Oxygen Demand (BOD)"; break;
+                                                            case 1: echo "Dissolved Oxygen (DO)"; break;
+                                                            case 2: echo "Total Suspended Solids (TSS)"; break;
+                                                            case 3: echo "pH Level (pH)"; break;
+                                                            case 4: echo "Temperature (&deg;C)"; break; 
+                                                        }
+
+                                                        echo "</h3>";
+                                                            echo "<div class=\"span4\" style=\"margin-left: 0px;\">";
+                                                            echo "<table class=\"table table-bordered\">";
+                                                            echo "<thead><tr><th colspan=\"2\" style=\"text-align: center;\">Initial Points / Values</th></tr><tr><th>Date</th><th>Value</th></tr></thead><tbody>";
+
+                                                            foreach ($query->result() as $row) {
+                                                                echo "<tr><td>".date("F d", strtotime($row->collection_datetime))."</td><td>";
+
+                                                                switch($temp) {
+                                                                    case 0: echo $row->BOD; break;
+                                                                    case 1: echo $row->DO; break;
+                                                                    case 2: echo $row->TSS; break;
+                                                                    case 3: echo $row->pH; break;
+                                                                    case 4: echo $row->TMP; break; 
+                                                                }
+                                                                echo "</td></tr>";
+                                                            }
+                                                            echo "</tbody></table>";
+                                                            echo "</div>"; //span4
+                                                        echo "</div>"; //span10
+                                                        }
+                                                echo "</div>"; //tab-pane active
+                                             echo "</div>"; //tab-content
+                                        echo "</div>"; //tabbable
+                                    echo "</div>"; //tab-pane active
+                                }
+
+                            ?>
 <!--
 										<div class="tab-pane fade in" id="guadalupe_2012">
 											<p>Guadlupe 2012 data</p>
@@ -635,9 +248,12 @@
 											<p>Guadlupe 2010 data</p>
 										</div>
 -->
+<!--
 									</div>
 								</div>
 							</div>
+-->
+<!--
 							<div class="tab-pane fade" id="mahiga">
 								<div class="tabbable">
 									<ul class="nav nav-tabs">
@@ -656,6 +272,7 @@
 									</div>
 								</div>
 							</div>
+-->
 						</div>
 					</div>
 				
@@ -687,6 +304,7 @@
 		<script type="text/javascript">
 			var autocollapse = function() {
 				var tabs = $('#guadalupe_years');
+//				var tabs = $('ul.top-tabs');
 				var tabsHeight = tabs.innerHeight();
 				
                 if (tabsHeight >= 50) {

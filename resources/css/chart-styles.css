@@ -1,0 +1,175 @@
+body {
+    background-color: #0e223d;
+    color: #000;
+}
+
+.nav.nav-tabs.top-tabs > li > a {
+    border-radius: 8px 8px 0 0;
+    padding: 8px 8px;
+    color: black;
+}
+
+.nav.nav-tabs.top-tabs > li:not(.active) > a {
+    background-color: #e0e0e0;
+}
+
+.nav.nav-tabs.top-tabs > li.active > a {
+    background-color: #ffffff;
+}
+
+.tabs-left > .nav-tabs {
+    border-bottom: 0;
+}
+
+.tab-content > .tab-pane {
+    display: none;
+}
+
+.tab-content > .active {
+    display: block;
+}
+
+.tabs-left > .nav-tabs > li {
+    float: none;
+}
+
+.tabs-left > .nav-tabs > li > a {
+    min-width: 74px;
+    margin-right: 0;
+    margin-bottom: 3px;
+}
+
+.tabs-left > .nav-tabs {
+    float: left;
+    margin-right: 0px;
+    margin-top: 37px;
+    border-right: 1px solid #ddd;
+}
+
+.tabs-left > .nav-tabs > li > a {
+    margin-right: -1px;
+    border-radius: 8px 0 0 8px;
+}
+
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+    border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+}
+
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+.tabs-left > .nav-tabs .active > a:focus {
+    border-color: #ddd transparent #ddd #ddd;
+    *border-right-color: #ffffff;
+}
+
+.tab-pane > p {
+    margin: 5px 15px;
+}
+
+li > a.guadalupe {
+    background-color: #B3E5FC;
+}
+
+li.active > a.guadalupe,
+li.active > a.guadalupe:focus,
+li.active > a.guadalupe:hover {
+    background-color: #E1F5FE;
+}
+
+li > a.butuanon {
+    background-color: #EF9A9A;
+}
+
+li.active > a.butuanon,
+li.active > a.butuanon:focus,
+li.active > a.butuanon:hover {
+    background-color: #FFCDD2;
+}
+
+li > a.mahiga {
+    background-color: #A5D6A7;
+}
+
+li.active > a.mahiga,
+li.active > a.mahiga:focus,
+li.active > a.mahiga:hover {
+    background-color: #C8E6C9;
+}
+
+li > a.lahug {
+    background-color: #E1BEE7;
+}
+
+li.active > a.lahug,
+li.active > a.lahug:focus,
+li.active > a.lahug:hover {
+    background-color: #F3E5F5;
+}
+
+li > a.kinalumsan {
+    background-color: #F8BBD0;
+}
+
+li.active > a.kinalumsan,
+li.active > a.kinalumsan:focus,
+li.active > a.kinalumsan:hover {
+    background-color: #FCE4EC;
+}
+
+ul.nav > li p {
+    margin-bottom: 0px;
+    color: #555555
+}
+
+ul.nav > li p.station-name {
+    font-size: smaller;
+    font-style: italic;
+    margin-left: 8px;
+}
+
+ul.nav > li.active p.city-name {
+    font-weight: bold;
+}
+
+.indicator {
+    display: inline-block;
+    width: 42px;
+    height: 12px;
+    border: 1px solid #dddddd;
+}
+
+.indicator-text {
+    display: inline-block;
+    font-size: small;
+    color: #eeeeee;
+}
+
+.indicator.guadalupe {
+    background-color: #B3E5FC;
+}
+
+.indicator.butuanon {
+    background-color: #EF9A9A;
+}
+
+.indicator.mahiga {
+    background-color: #A5D6A7;
+}
+
+.indicator.lahug {
+    background-color: #E1BEE7;
+}
+
+.indicator.kinalumsan {
+    background-color: #F8BBD0;
+}
+
+h3 {
+    color: #555555;
+}
+
+table th,
+table td {
+    color: #777777
+}
