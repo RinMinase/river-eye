@@ -231,7 +231,7 @@
                                                         $reg_latest_year = (int)date("Y", strtotime($reg_latest_year_query->collection_datetime));
  
                                                         $reg_data_query = $this->db->query("SELECT * FROM river_data WHERE station='" . $info_query_row->station_name . "' AND YEAR(collection_datetime)='" . $reg_latest_year . "' ORDER BY collection_datetime");
-                                                        
+                                                        $standard_data_query = $this->db->query("SELECT * FROM river_standard")->row();
                                                         /* JUST FOR CHECKING IF THERE IS DATA */
                                                         
                                                         $reg_months = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -509,7 +509,7 @@
                                                                                 case 1: echo "53,151,255,0.4"; break;
                                                                                 case 2: echo "153,51,155,0.4"; break;
                                                                                 case 3: echo "153,251,55,0.4"; break;
-                                                                                case 4: echo "253,51,55,0.4"; break; 
+                                                                                case 4: echo "253,170,55,0.4"; break; 
                                                                             }
                                                                             echo ")\",";
                                                                             echo "borderDash: [5, 5],";
@@ -520,9 +520,59 @@
                                                                                 case 1: echo "53,151,255,0.2"; break;
                                                                                 case 2: echo "153,51,155,0.2"; break;
                                                                                 case 3: echo "153,251,55,0.2"; break;
-                                                                                case 4: echo "253,51,55,0.2"; break; 
+                                                                                case 4: echo "253,170,55,0.2"; break; 
                                                                             }
                                                                             echo ")\"";
+                                                                            echo "}";
+                                                                                
+                                                                            echo ",{";
+                                                                                echo "label: 'Standanrd (";
+                                                                                     switch($temp) {
+                                                                                        case 0: echo $standard_data_query->BOD; break;
+                                                                                        case 1: echo $standard_data_query->DO; break;
+                                                                                        case 2: echo $standard_data_query->TSS; break;
+                                                                                        case 3: echo $standard_data_query->pH; break;
+                                                                                        case 4: echo $standard_data_query->TMP; break; 
+                                                                                    }
+                                                                                echo ")',";
+
+                                                                                echo "data: [";
+                                                                                switch($temp) {
+                                                                                    case 0:
+                                                                                        for($st_var = 0; $st_var < 12; $st_var++) {
+                                                                                            echo $standard_data_query->BOD;
+                                                                                            if($st_var != 11) echo ", "; 
+                                                                                        }
+                                                                                        break;
+                                                                                    case 1:
+                                                                                        for($st_var = 0; $st_var < 12; $st_var++) {
+                                                                                            echo $standard_data_query->DO;
+                                                                                            if($st_var != 11) echo ", "; 
+                                                                                        }
+                                                                                        break;
+                                                                                    case 2:
+                                                                                        for($st_var = 0; $st_var < 12; $st_var++) {
+                                                                                            echo $standard_data_query->TSS;
+                                                                                            if($st_var != 11) echo ", "; 
+                                                                                        }
+                                                                                        break;
+                                                                                    case 3:
+                                                                                        for($st_var = 0; $st_var < 12; $st_var++) {
+                                                                                            echo $standard_data_query->pH;
+                                                                                            if($st_var != 11) echo ", "; 
+                                                                                        }
+                                                                                        break;
+                                                                                    case 4:
+                                                                                        for($st_var = 0; $st_var < 12; $st_var++) {
+                                                                                            echo $standard_data_query->TMP;
+                                                                                            if($st_var != 11) echo ", "; 
+                                                                                        }
+                                                                                        break; 
+                                                                                }
+                                                                                echo "],";
+
+                                                                                echo "borderColor: \"rgba(255, 20, 20, 0.6)\",";
+                                                                                echo "backgroundColor: \"rgba(255, 255, 255, 0)\""; 
                                                                             echo "}";
                                                                             echo "]";
                                                                         echo "}, options: { responsive: true, maintainAspectRatio: false }";
@@ -663,7 +713,7 @@
                                                                     case 1: echo "53,151,255,0.4"; break;
                                                                     case 2: echo "153,51,155,0.4"; break;
                                                                     case 3: echo "153,251,55,0.4"; break;
-                                                                    case 4: echo "253,51,55,0.4"; break; 
+                                                                    case 4: echo "253,17051,55,0.4"; break; 
                                                                 }
                                                                 echo ")\",";
                                                                 echo "backgroundColor: \"rgba(";
@@ -673,9 +723,59 @@
                                                                     case 1: echo "53,151,255,0.2"; break;
                                                                     case 2: echo "153,51,155,0.2"; break;
                                                                     case 3: echo "153,251,55,0.2"; break;
-                                                                    case 4: echo "253,51,55,0.2"; break; 
+                                                                    case 4: echo "253,170,55,0.2"; break; 
                                                                 }
-                                                                echo ")\"}]";
+                                                                echo ")\"}";
+                                                                echo ",{";
+                                                                    echo "label: 'Standanrd (";
+                                                                         switch($temp) {
+                                                                            case 0: echo $standard_data_query->BOD; break;
+                                                                            case 1: echo $standard_data_query->DO; break;
+                                                                            case 2: echo $standard_data_query->TSS; break;
+                                                                            case 3: echo $standard_data_query->pH; break;
+                                                                            case 4: echo $standard_data_query->TMP; break; 
+                                                                        }
+                                                                    echo ")',";
+
+                                                                    echo "data: [";
+                                                                    switch($temp) {
+                                                                        case 0:
+                                                                            for($st_var = 0; $st_var < 12; $st_var++) {
+                                                                                echo $standard_data_query->BOD;
+                                                                                if($st_var != 11) echo ", "; 
+                                                                            }
+                                                                            break;
+                                                                        case 1:
+                                                                            for($st_var = 0; $st_var < 12; $st_var++) {
+                                                                                echo $standard_data_query->DO;
+                                                                                if($st_var != 11) echo ", "; 
+                                                                            }
+                                                                            break;
+                                                                        case 2:
+                                                                            for($st_var = 0; $st_var < 12; $st_var++) {
+                                                                                echo $standard_data_query->TSS;
+                                                                                if($st_var != 11) echo ", "; 
+                                                                            }
+                                                                            break;
+                                                                        case 3:
+                                                                            for($st_var = 0; $st_var < 12; $st_var++) {
+                                                                                echo $standard_data_query->pH;
+                                                                                if($st_var != 11) echo ", "; 
+                                                                            }
+                                                                            break;
+                                                                        case 4:
+                                                                            for($st_var = 0; $st_var < 12; $st_var++) {
+                                                                                echo $standard_data_query->TMP;
+                                                                                if($st_var != 11) echo ", "; 
+                                                                            }
+                                                                            break; 
+                                                                    }
+                                                                    echo "],";
+
+                                                                    echo "borderColor: \"rgba(255, 20, 20, 0.6)\",";
+                                                                    echo "backgroundColor: \"rgba(255, 255, 255, 0)\""; 
+                                                                echo "}";
+                                                                echo "]";
                                                             echo "}, options: { responsive: true, maintainAspectRatio: false }";
                                                         echo "});";
                                                         echo "</script>";
