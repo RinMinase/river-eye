@@ -73,6 +73,12 @@
                 height: 20% !important;
                 min-height: 200px !important;
             }
+            
+/*
+            * {
+                box-sizing: border-box;
+            }
+*/
         </style>
         
         <script src="<?php echo base_url() ?>resources/chartjs-2.4.0/chart.min.js"></script>
