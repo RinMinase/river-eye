@@ -781,7 +781,7 @@
                                                         echo "</script>";
                                                             echo "<div class=\"span4\" style=\"margin-left: 0px;\">";
                                                             echo "<table class=\"table table-bordered\">";
-                                                            echo "<thead><tr><th colspan=\"2\" style=\"text-align: center;\">Initial Points / Values</th></tr><tr><th>Date</th><th>Value</th></tr></thead><tbody>";
+                                                            echo "<thead><tr><th colspan=\"4\" style=\"text-align: center;\">Initial Points / Values</th></tr><tr><th>Date</th><th>Value</th><th colspan='2' style='text-align:center;'>Actions</th></tr></thead><tbody>";
                             
                                                             foreach ($data_query->result() as $data_query_row) {
                                                                 echo "<tr><td>".date("F d", strtotime($data_query_row->collection_datetime))."</td><td>";
@@ -793,7 +793,10 @@
                                                                     case 3: echo $data_query_row->pH; break;
                                                                     case 4: echo $data_query_row->TMP; break; 
                                                                 }
-                                                                echo "</td></tr>";
+                                                                echo "</td>";
+                                                                echo "<td><button class='btn btn-success'>Update</button></td>";
+                                                                echo "<td><button class='btn btn-danger'>Delete</button></td>";
+                                                                echo "</tr>";
                                                             }
                                                             echo "</tbody></table>";
                                                             echo "</div>"; //span4

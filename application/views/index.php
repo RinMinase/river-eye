@@ -24,13 +24,6 @@
 			echo anchor('chart', 'Show Chart');
 		?>
         <br>
-		<?php 
-			echo anchor('add_station', 'Add Station');
-		?>
-        <br>
-		<?php 
-			echo anchor('edit_wqstd', 'Edit Water Quality Standard Level');
-		?>
         
 <!--
         <form action="?" method="POST">

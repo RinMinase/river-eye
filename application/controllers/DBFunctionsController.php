@@ -3,28 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class DBFunctionsController extends CI_Controller {
 	public function __construct(){ parent::__construct(); }
-	
-//	public function insertWaterData() {
-//		$river = $this->input->post("river-location");
-//		$station = $this->input->post("station-location");
-//		$barangay = $this->input->post("barangay-location");
-//		$sDate = $this->input->post("sampling-date");
-//		$sTime = $this->input->post("collection-time");
-//		$BOD = $this->input->post("bod");
-//		$DO = $this->input->post("do");
-//		$TSS = $this->input->post("tss");
-//		$pH = $this->input->post("ph");
-//		$Temp = $this->input->post("temp");
-		
-//		INSERT INTO `riverdata` (`id`, `river`, `station`, `barangay`, `collection_datetime`, `BOD`, `DO`, `TSS`, `pH`, `TMP`) VALUES ('0', 'Guadalupe', 'Sancianko Bridge', 'Pahina Central', '2016-12-15 12:00:00', '30', '2', '40', '8.2', '25');
-		
-//		$newDate = date("Y-m-d", strtotime($sDate));
-//		$sampleDateTime = $newDate . " " . $sTime;
-//		
-//		$sql = "INSERT INTO riverdata (river, station, barangay, collection_datetime, BOD, DO, TSS, pH, TMP) VALUES ('".$river."', '".$station."', '".$barangay."', '".$sampleDateTime."', '".$BOD."', '".$DO."', '".$TSS."', '".$pH."', '".$Temp."')";
-//		$this->db->query($sql);
-//		echo $this->db->affected_rows();
-//	}
     
     public function validateWaterData() {
         $river = $this->input->post("river-location");
@@ -42,7 +20,6 @@ class DBFunctionsController extends CI_Controller {
         
         $pattern_date = "/^((0[13578]|1[02])[\/.]31[\/.](19|20)[0-9]{2})|((01|0[3-9]|1[1-2])[\/.](29|30)[\/.](19|20)[0-9]{2})|((0[1-9]|1[0-2])[\/.](0[1-9]|1[0-9]|2[0-8])[\/.](19|20)[0-9]{2})|((02)[\/.]29[\/.](((19|20)(04|08|[2468][048]|[13579][26]))|2000))/";
 
-        //$pattern_time = "/^([01]\d|2[0-3]):([0-9]\d|[1-5][0-9]\d)/";
         $pattern_time = "/^(2[0-3]|1[0-9]|0[0-9]|[^0-9][0-9]):([0-5][0-9]|[0-9])/";
 
         $pattern_bod = "/^([1-9][0-9]{0,2}|1000)$/";
@@ -60,21 +37,24 @@ class DBFunctionsController extends CI_Controller {
         $rgx_tmp = preg_match($pattern_tmp, $Temp);
         
         if ( $rgx_date && $rgx_time && $rgx_bod && $rgx_do && $rgx_tss && $rgx_ph && $rgx_tmp  ) 
-        {
+        {   
+            $river = xss_clean($river);
+            $station = xss_clean($station);
+            $barangay = xss_clean($river);
+            $sDate = xss_clean($sDate);
+            $sTime = xss_clean($sTime);
+            $BOD = xss_clean($BOD);
+            $DO = xss_clean($DO);
+            $TSS = xss_clean($TSS);
+            $pH = xss_clean($pH);
+            $Temp = xss_clean($Temp);
+            
             $this->load->model("DBModel");
             $this->DBModel->insertWaterData($river, $station, $barangay, $sDate, $sTime, $BOD, $DO, $TSS, $pH, $Temp);
             redirect('index'); // SUCCESS
-//            echo "succ";
         } else {
-//            echo $rgx_date . "<br>" . $rgx_time . "<br>" . $rgx_bod . "<br>" . $rgx_do . "<br>" . $rgx_tss . "<br>" . $rgx_ph . "<br>" . $rgx_tmp;
-            
             redirect('input'); // FAIL
-//            echo "fail";
         }
-        
-        
-        
-        
     }
     
     public function pConsole($data) {
