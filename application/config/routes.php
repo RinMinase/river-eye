@@ -12,3 +12,5 @@ $route['add_station'] = "PageController/add_station";
 $route['edit_wqstd'] = "PageController/edit_wqstd";
 
 $route['validateWaterData'] = "DBFunctionsController/validateWaterData";
+
+$route['test'] = "PageController/test";

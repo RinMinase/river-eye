@@ -41,4 +41,11 @@ class DBFunctionsController extends CI_Controller {
         $this->load->model("DBModel");
         $this->DBModel->insertWaterData($river, $station, $barangay, $sDate, $sTime, $BOD, $DO, $TSS, $pH, $Temp);
     }
+    
+    public function pConsole($data) {
+        if(is_array($data)) $output = "<script>console.log('" . implode(',', $data) . "'</script>";
+        else $output = "<script>console.log('" . $data . "'</script>";
+        
+        echo $output;
+    }
 }
